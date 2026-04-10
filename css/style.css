@@ -1,94 +1,84 @@
-/* Reset some default styles */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body styling */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-  background-color: #f4f6f9;
-  color: #333;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  color: #fff;
 }
 
 /* Header */
 header {
-  background: #2c3e50;
-  color: #fff;
-  padding: 20px 0;
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  color: white;
   text-align: center;
+  padding: 40px 20px;
 }
 
 header h1 {
+  font-size: 36px;
   margin-bottom: 10px;
 }
 
-/* Navigation bar */
+/* Navigation */
 nav {
-  background: #34495e;
+  background: linear-gradient(90deg, violet, indigo, blue, green, yellow, orange, red);
 }
 
 nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
 }
 
 nav ul li {
-  margin: 0;
+  margin: 0 15px;
 }
 
 nav ul li a {
   display: block;
-  padding: 15px 20px;
-  color: #fff;
+  padding: 15px;
+  color: white;
   text-decoration: none;
-  transition: background 0.3s;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 nav ul li a:hover {
-  background: #1abc9c;
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  border-radius: 5px;
 }
 
-/* Main section */
+/* Main Section */
 section {
   padding: 40px 20px;
-  max-width: 900px;
-  margin: auto;
-  background: #fff;
-  margin-top: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  background: linear-gradient(90deg, orange, yellow, green, blue, indigo, violet, red);
 }
 
 section h2 {
+  font-size: 28px;
   margin-bottom: 15px;
-  color: #2c3e50;
+}
+
+section p {
+  max-width: 600px;
+  margin: auto;
+  font-size: 16px;
 }
 
 /* Footer */
 footer {
+  background: linear-gradient(90deg, blue, indigo, violet, red, orange, yellow, green);
+  color: white;
   text-align: center;
   padding: 15px;
-  margin-top: 20px;
-  background: #2c3e50;
-  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
-/* Responsive design */
-@media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-  }
-
-  nav ul li a {
-    text-align: center;
-    border-top: 1px solid #444;
-  }
-}
-
-
- 
