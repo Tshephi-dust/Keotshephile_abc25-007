@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Cart - Dust Order System</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel=script src="js/script.js"></script>
 </head>
 <body>
 
@@ -22,24 +23,18 @@
   <h2>Items in Cart</h2>
 
   <table>
+    <thead>
     <tr>
       <th>Item</th>
       <th>Quantity</th>
       <th>Price</th>
+      <th>Remove</th>
     </tr>
-    <tr>
-      <td>Zinger Burger</td>
-      <td>2</td>
-      <td>P90</td>
-    </tr>
-    <tr>
-      <td>Fries</td>
-      <td>1</td>
-      <td>P25</td>
-    </tr>
+    </thead>
+    <tbody id="cart-item"></tbody>
   </table>
 
-  <h3>Total: P115</h3>
+  <h3 id="total">Total: P0</h3>
 
   <button class="btn">Checkout</button>
 </section>
