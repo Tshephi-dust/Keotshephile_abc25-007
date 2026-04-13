@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Dust Order System</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    .menu-header {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .categories {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .categories button {
+      margin: 5px;
+      padding: 10px 15px;
+      border: none;
+      background-color: black;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .categories button:hover {
+      background-color: #e4002b;
+    }
+
+    .items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      width: 220px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      background: #fff;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 10px 0 5px;
+    }
+
+    .card p {
+      font-weight: bold;
+      color: #e4002b;
+    }
+
+    .btn {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Header -->
+<header>
+  <h1>Dust Menu 🍗</h1>
+  <p>Choose your favorite meals</p>
+</header>
+
+<!-- Navigation -->
+<nav>
+  <a href="index.html">Home</a>
+  <a href="menu.html">Menu</a>
+  <a href="cart.html">Cart</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- Menu Header -->
+<div class="menu-header">
+  <h2>Our Delicious Menu</h2>
+</div>
+
+<!-- Categories -->
+<div class="categories">
+  <button onclick="filterMenu('all')">All</button>
+  <button onclick="filterMenu('chicken')">Chicken</button>
+  <button onclick="filterMenu('burger')">Burgers</button>
+  <button onclick="filterMenu('snacks')">Snacks</button>
+</div>
+
+<!-- Items -->
+<div class="items">
+
+  <div class="card chicken">
+    <img src="https://images.unsplash.com/photo-1562967916-eb82221dfb92" alt="Fried Chicken">
+    <h3>Fried Chicken</h3>
+    <p>P60</p>
+    <button class="btn" onclick="addToCart('Fried Chicken', 60)">Add to Cart</button>
+  </div>
+
+  <div class="card burger">
+    <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086" alt="Zinger Burger">
+    <h3>Zinger Burger</h3>
+    <p>P45</p>
+    <button class="btn" onclick="addToCart('Zinger Burger', 45)">Add to Cart</button>
+  </div>
+
+  <div class="card snacks">
+    <img src="https://images.unsplash.com/photo-1585238342028-4d5f9c9d4b42" alt="Fries">
+    <h3>Fries</h3>
+    <p>P25</p>
+    <button class="btn" onclick="addToCart('Fries', 25)">Add to Cart</button>
+  </div>
+
+  <div class="card chicken">
+    <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Chicken Wings">
+    <h3>Chicken Wings</h3>
+    <p>P50</p>
+    <button class="btn" onclick="addToCart('Chicken Wings', 50)">Add to Cart</button>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2026 Dust Order System</p>
+</footer>
+
+<!-- JavaScript -->
+<script src="js/script.js"></script>
+
+<script>
+  function filterMenu(category) {
+    let items = document.querySelectorAll(".card");
+
+    items.forEach(item => {
+      if (category === "all") {
+        item.style.display = "block";
+      } else {
+        if (item.classList.contains(category)) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
