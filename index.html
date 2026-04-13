@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KFC Order System</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    .hero {
+      background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') no-repeat center/cover;
+      height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-text {
+      background-color: rgba(0,0,0,0.6);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .hero button {
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Header -->
+<header>
+  <h1>KFC Order System 🍗</h1>
+  <p>Fast, Fresh & Delivered to You</p>
+</header>
+
+<!-- Navigation -->
+<nav>
+  <a href="index.html">Home</a>
+  <a href="menu.html">Menu</a>
+  <a href="cart.html">Cart</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Craving Something Delicious?</h1>
+    <p>Order your favorite meals anytime, anywhere.</p>
+    <a href="menu.html">
+      <button class="btn">Order Now</button>
+    </a>
+  </div>
+</section>
+
+<!-- Popular Items -->
+<section class="section">
+  <h2>Popular Meals</h2>
+
+  <div class="items">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086" alt="Zinger Burger">
+      <h3>Zinger Burger</h3>
+      <p>P45</p>
+      <button class="btn" onclick="addToCart('Zinger Burger', 45)">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1562967916-eb82221dfb92" alt="Fried Chicken">
+      <h3>Fried Chicken</h3>
+      <p>P60</p>
+      <button class="btn" onclick="addToCart('Fried Chicken', 60)">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1585238342028-4d5f9c9d4b42" alt="Fries">
+      <h3>Fries</h3>
+      <p>P25</p>
+      <button class="btn" onclick="addToCart('Fries', 25)">Add to Cart</button>
+    </div>
+  </div>
+</section>
+
+<!-- Special Deals -->
+<section class="section">
+  <h2>Special Deals 🔥</h2>
+  <p>Enjoy amazing combo offers at discounted prices.</p>
+  <a href="menu.html">
+    <button class="btn">View Deals</button>
+  </a>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2026 KFC Order System | Designed for Assignment</p>
+</footer>
+
+<!-- JavaScript -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
