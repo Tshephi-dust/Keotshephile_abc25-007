@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart - Dust Order System</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    .cart-container {
+      padding: 20px;
+      text-align: center;
+    }
+
+    table {
+      width: 80%;
+      margin: auto;
+      border-collapse: collapse;
+    }
+
+    th {
+      background-color: #e4002b;
+      color: white;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+    }
+
+    .remove-btn {
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .remove-btn:hover {
+      background-color: #e4002b;
+    }
+
+    .total-box {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .checkout-btn {
+      margin-top: 15px;
+      padding: 12px 20px;
+      font-size: 16px;
+    }
+
+    .empty {
+      margin-top: 20px;
+      font-size: 18px;
+      color: gray;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Header -->
+<header>
+  <h1>Your Cart 🛒</h1>
+  <p>Review your order before checkout</p>
+</header>
+
+<!-- Navigation -->
+<nav>
+  <a href="index.html">Home</a>
+  <a href="menu.html">Menu</a>
+  <a href="cart.html">Cart</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- Cart Section -->
+<section class="cart-container">
+
+  <h2>Items in Your Cart</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Total Price</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+    <tbody id="cart-items">
+      <!-- JS will insert items here -->
+    </tbody>
+  </table>
+
+  <p id="empty-message" class="empty"></p>
+
+  <div class="total-box" id="total">Total: P0</div>
+
+  <button class="btn checkout-btn" onclick="checkout()">Checkout</button>
+
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2026 Dust Order System</p>
+</footer>
+
+<!-- JavaScript -->
+<script src="js/script.js"></script>
+
+<script>
+  function checkout() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if (cart.length === 0) {
+      alert("Your cart is empty!");
+    } else {
+      alert("Order placed successfully! 🎉");
+      localStorage.removeItem("cart");
+      location.reload();
+    }
+  }
+
+  // Show empty message if needed
+  function checkEmpty() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let msg = document.getElementById("empty-message");
+
+    if (cart.length === 0) {
+      msg.innerText = "Your cart is empty. Go add some delicious meals!";
+    } else {
+      msg.innerText = "";
+    }
+  }
+
+  window.onload = function () {
+    displayCart();
+    checkEmpty();
+  };
+</script>
+
+</body>
+</html>
