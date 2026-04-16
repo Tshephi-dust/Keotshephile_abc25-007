@@ -1,43 +1,36 @@
-// Cart array
+// Load cart from localStorage
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 // Add to cart
 function addToCart(name, price) {
-  let item = cart.find(i => i.name === name);
-
-  if (item) {
-    item.quantity++;
-  } else {
-    cart.push({ name, price, quantity: 1 });
-  }
-
+  cart.push({ name, price });
   localStorage.setItem("cart", JSON.stringify(cart));
   alert(name + " added to cart!");
 }
 
 // Display cart
 function displayCart() {
-  let table = document.getElementById("cart-items");
+  let cartContainer = document.getElementById("cartItems");
   let total = 0;
 
-  if (!table) return;
+  if (!cartContainer) return;
 
-  table.innerHTML = "";
+  cartContainer.innerHTML = "";
 
   cart.forEach((item, index) => {
-    total += item.price * item.quantity;
+    total += item.price;
 
-    table.innerHTML += `
-      <tr>
-        <td>${item.name}</td>
-        <td>${item.quantity}</td>
-        <td>P${item.price * item.quantity}</td>
-        <td><button onclick="removeItem(${index})">X</button></td>
-      </tr>
+    cartContainer.innerHTML += `
+      <div class="cart-item">
+        <span>${item.name} - P${item.price}</span>
+        <button class="btn remove-btn" onclick="removeItem(${index})">
+          Remove
+        </button>
+      </div>
     `;
   });
 
-  document.getElementById("total").innerText = "Total: P" + total;
+  document.getElementById("totalPrice").innerText = total;
 }
 
 // Remove item
@@ -47,5 +40,12 @@ function removeItem(index) {
   displayCart();
 }
 
-// Run cart display on page load
-window.onload = displayCart;
+// Clear cart
+function clearCart() {
+  cart = [];
+  localStorage.setItem("cart", JSON.stringify(cart));
+  displayCart();
+}
+
+// Run on page load
+displayCart();
