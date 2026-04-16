@@ -1,4 +1,3 @@
-// Load cart from localStorage
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 // Add to cart
@@ -11,14 +10,14 @@ function addToCart(name, price) {
 // Display cart
 function displayCart() {
   let cartContainer = document.getElementById("cartItems");
-  let total = 0;
+  let itemsTotal = 0;
 
   if (!cartContainer) return;
 
   cartContainer.innerHTML = "";
 
   cart.forEach((item, index) => {
-    total += item.price;
+    itemsTotal += item.price;
 
     cartContainer.innerHTML += `
       <div class="cart-item">
@@ -30,7 +29,24 @@ function displayCart() {
     `;
   });
 
-  document.getElementById("totalPrice").innerText = total;
+  document.getElementById("itemsTotal").innerText = itemsTotal;
+
+  updateTotal();
+}
+
+// Update total with delivery
+function updateTotal() {
+  let itemsTotal = 0;
+
+  cart.forEach(item => {
+    itemsTotal += item.price;
+  });
+
+  let location = document.getElementById("location");
+  let deliveryFee = location ? parseInt(location.value) : 0;
+
+  document.getElementById("deliveryFee").innerText = deliveryFee;
+  document.getElementById("totalPrice").innerText = itemsTotal + deliveryFee;
 }
 
 // Remove item
@@ -47,5 +63,5 @@ function clearCart() {
   displayCart();
 }
 
-// Run on page load
+// Load page
 displayCart();
