@@ -61,6 +61,14 @@ function clearCart() {
   cart = [];
   localStorage.setItem("cart", JSON.stringify(cart));
   displayCart();
+  function goToCheckout() {
+  if (cart.length === 0) {
+    alert("Your cart is empty!");
+    return;
+  }
+
+  window.location.href = "checkout.html";
+}
 }
 
 // Load page
