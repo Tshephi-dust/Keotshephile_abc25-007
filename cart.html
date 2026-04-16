@@ -61,16 +61,20 @@
   <h1>🛒 Your Cart</h1>
 </header>
 
-<div class="cart-container" id="cartItems">
-  <!-- Items will load here -->
+<div class="cart-container">
+  <label for="location">Select Delivery Area:</label>
+  <select id="location" onchange="updateTotal()">
+    <option value="0">-- Choose Area --</option>
+    <option value="20">Nearby (P20)</option>
+    <option value="35">Mid Distance (P35)</option>
+    <option value="50">Far (P50)</option>
+  </select>
 </div>
 
 <div class="cart-container total">
-  <p>Total: P<span id="totalPrice">0</span></p>
-</div>
-
-<div class="cart-container">
-  <button class="btn" onclick="clearCart()">Clear Cart</button>
+  <p>Items Total: P<span id="itemsTotal">0</span></p>
+  <p>Delivery Fee: P<span id="deliveryFee">0</span></p>
+  <h3>Grand Total: P<span id="totalPrice">0</span></h3>
 </div>
 
 <script src="js/script.js"></script>
