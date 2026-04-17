@@ -2,45 +2,30 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Checkout</title>
 <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-
 <div class="app">
 
-<header>💳 Checkout 
-<button class="theme-toggle" onclick="toggleTheme()">
-  🌙
-</button>
-</header>
+<header>💳 Checkout</header>
 
 <section class="section">
+  <input placeholder="Full Name">
+  <input placeholder="Phone">
+  <input placeholder="Address">
 
-<input type="text" placeholder="Full Name">
-<input type="text" placeholder="Phone Number">
-<input type="text" placeholder="Address">
+  <select id="location">
+    <option value="30">Standard (P30)</option>
+    <option value="60">Express (P60)</option>
+  </select>
 
-<select>
-  <option>Standard Shipping (P30)</option>
-  <option>Express Shipping (P60)</option>
-</select>
-
-<button class="btn">Place Order</button>
-
+  <button class="btn" onclick="placeOrder()">Place Order</button>
 </section>
 
 </div>
 
-<div class="bottom-nav">
-  <a href="index.html">🏠</a>
-  <a href="shop.html">👕</a>
-  <a href="cart.html">🛒</a>
-  <a href="contact.html">📞</a>
-</div>
-
+<script src="js/script.js"></script>
 </body>
 </html>
-  
