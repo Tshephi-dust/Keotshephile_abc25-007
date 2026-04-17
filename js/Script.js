@@ -131,3 +131,45 @@ function calculateTotal(cart) {
   document.getElementById("totalPrice").innerText = total;
   localStorage.setItem("cart", JSON.stringify(cart));
 }
+// =========================
+// DARK / LIGHT MODE ENGINE
+// =========================
+
+function toggleTheme() {
+  document.body.classList.toggle("light-mode");
+
+  let theme = document.body.classList.contains("light-mode")
+    ? "light"
+    : "dark";
+
+  localStorage.setItem("theme", theme);
+
+  updateThemeIcon();
+}
+
+// Load saved theme
+function loadTheme() {
+  let savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "light") {
+    document.body.classList.add("light-mode");
+  }
+
+  updateThemeIcon();
+}
+
+// Update icon (🌙 / ☀️)
+function updateThemeIcon() {
+  let btn = document.querySelector(".theme-toggle");
+
+  if (!btn) return;
+
+  if (document.body.classList.contains("light-mode")) {
+    btn.innerHTML = "☀️";
+  } else {
+    btn.innerHTML = "🌙";
+  }
+}
+
+// Run on page load
+loadTheme();
