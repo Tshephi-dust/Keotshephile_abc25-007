@@ -433,3 +433,170 @@ h2 {
 .bottom-nav a.active {
   color: white;
 }
+/* ===== ROOT ===== */
+:root {
+  --bg: #0a0a0a;
+  --card: #121212;
+  --card-hover: #1a1a1a;
+  --text: #ffffff;
+  --gray: #a0a0a0;
+  --accent: #ffffff;
+  --border: #222;
+  --sale: #ff3b3b;
+}
+
+/* ===== GLOBAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ===== APP ===== */
+.app {
+  padding-bottom: 80px;
+}
+
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  background: #000;
+  border-bottom: 1px solid var(--border);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* theme button */
+.theme-toggle {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* ===== SECTION ===== */
+.section {
+  padding: 20px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+/* ===== GRID ===== */
+.items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 15px;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: var(--card-hover);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.7);
+}
+
+/* image */
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* text */
+.card h3 {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.card p {
+  font-size: 13px;
+  color: var(--gray);
+}
+
+/* strike price */
+.card s {
+  color: #777;
+}
+
+/* sale price highlight */
+.card b {
+  color: var(--sale);
+  font-size: 16px;
+}
+
+/* ===== SELECT BOXES ===== */
+select {
+  width: 80%;
+  margin-top: 8px;
+  padding: 6px;
+  background: #000;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 6px;
+  outline: none;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+  margin: 12px 0;
+  padding: 8px 12px;
+  background: transparent;
+  border: 1px solid #444;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: white;
+  color: black;
+}
+
+/* ===== BOTTOM NAV ===== */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.bottom-nav a {
+  color: var(--gray);
+  text-decoration: none;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.bottom-nav a:hover,
+.bottom-nav a.active {
+  color: white;
+}
