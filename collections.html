@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collections</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<div class="app">
+
+<header>
+  👕 Collections
+  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+</header>
+
+<!-- HERO -->
+<section class="section">
+  <h2>Explore Our Collections ✨</h2>
+  <p style="font-size:13px; color:var(--gray);">
+    Find your vibe — from streetwear to minimal essentials.
+  </p>
+</section>
+
+<!-- COLLECTIONS GRID -->
+<section class="section">
+
+<div class="items">
+
+  <!-- STREETWEAR -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
+    <h3>Streetwear 🔥</h3>
+    <p>Bold. Loud. Confident.</p>
+    <button class="btn" onclick="viewCollection('street')">View</button>
+  </div>
+
+  <!-- MINIMAL -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
+    <h3>Minimal ⚪</h3>
+    <p>Clean & simple designs</p>
+    <button class="btn" onclick="viewCollection('minimal')">View</button>
+  </div>
+
+  <!-- OVERSIZED -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c">
+    <h3>Oversized 👕</h3>
+    <p>Comfort meets style</p>
+    <button class="btn" onclick="viewCollection('oversized')">View</button>
+  </div>
+
+  <!-- CUSTOM -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+    <h3>Custom 🎨</h3>
+    <p>Create your own design</p>
+    <button class="btn" onclick="viewCollection('custom')">View</button>
+  </div>
+
+</div>
+
+</section>
+
+<!-- COLLECTION RESULT -->
+<section class="section">
+  <h2 id="collectionTitle">Select a Collection</h2>
+
+  <div id="collectionItems" class="items"></div>
+</section>
+
+</div>
+
+<!-- Bottom Navigation -->
+<div class="bottom-nav">
+  <a href="index.html">🏠</a>
+  <a href="shop.html">👕</a>
+  <a href="collection.html" class="active">✨</a>
+  <a href="cart.html">🛒</a>
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
