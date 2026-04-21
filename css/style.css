@@ -1,5 +1,5 @@
 /* =========================
-   DUST THREADS - PRO CSS
+   DUST THREADS - DARK UI
    ========================= */
 
 /* RESET */
@@ -10,266 +10,155 @@
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* =========================
-   THEME SYSTEM
-   ========================= */
-:root {
-  --bg: #0a0a0a;
-  --card: #151515;
-  --soft: #1e1e1e;
-  --primary: #ff6b00;
-  --accent: #ff9f1c;
-  --text: #ffffff;
-  --subtext: #aaaaaa;
-  --border: #2a2a2a;
-}
-
-body.light-mode {
-  --bg: #f4f4f4;
-  --card: #ffffff;
-  --soft: #eaeaea;
-  --text: #111;
-  --subtext: #555;
-  --border: #ddd;
-}
-
-/* =========================
-   BODY & APP
-   ========================= */
+/* BODY */
 body {
-  background: var(--bg);
-  color: var(--text);
-  transition: 0.3s ease;
-}
-
-.app {
-  max-width: 420px;
-  margin: auto;
-  padding-bottom: 90px;
+  background: #0b0b0b;
+  color: #ffffff;
 }
 
 /* =========================
    HEADER
    ========================= */
 header {
-  background: linear-gradient(90deg, var(--primary), var(--accent));
+  background: #111;
   padding: 15px;
   text-align: center;
-  font-weight: bold;
-  font-size: 18px;
-  border-radius: 0 0 15px 15px;
-  position: relative;
+  border-bottom: 1px solid #222;
 }
 
-/* THEME TOGGLE */
-.theme-toggle {
-  position: absolute;
-  right: 15px;
-  top: 10px;
-  background: var(--card);
-  border: none;
+header h1 {
+  color: #ff6b00;
+  margin-bottom: 10px;
+}
+
+/* NAVIGATION */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+nav a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 14px;
   padding: 6px 10px;
-  border-radius: 10px;
-  cursor: pointer;
-  color: var(--text);
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ff6b00;
 }
 
 /* =========================
-   SECTIONS
+   HERO SECTION
    ========================= */
-.section {
-  padding: 15px;
+.hero {
+  height: 300px;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+              url("https://images.unsplash.com/photo-1520975916090-3105956dac38") center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
 }
 
-.section h2 {
-  margin-bottom: 8px;
+.hero h2 {
+  font-size: 26px;
+  font-weight: bold;
 }
 
-.section p {
-  color: var(--subtext);
+.button {
+  background: linear-gradient(90deg, #ff6b00, #ff9f1c);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.button:hover {
+  transform: scale(1.05);
 }
 
 /* =========================
-   GRID SYSTEM
+   FEATURED SECTION
    ========================= */
-.items {
+.featured {
+  padding: 20px;
+}
+
+.featured h3 {
+  margin-bottom: 15px;
+}
+
+/* GRID */
+.product-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
 }
 
-/* =========================
-   CARDS
-   ========================= */
-.card {
-  background: var(--card);
-  border-radius: 15px;
+/* PRODUCT CARD */
+.product {
+  background: #111;
+  border-radius: 12px;
   padding: 10px;
-  border: 1px solid var(--border);
-  transition: 0.25s;
+  text-align: center;
+  border: 1px solid #222;
+  transition: 0.3s;
 }
 
-.card:hover {
-  transform: translateY(-4px);
+.product:hover {
+  transform: translateY(-5px);
+  border-color: #ff6b00;
 }
 
-/* IMAGES */
-.card img {
+/* PRODUCT IMAGE */
+.product img {
   width: 100%;
-  height: 130px;
+  height: 180px;
   object-fit: cover;
   border-radius: 10px;
 }
 
-/* TEXT */
-.card h3 {
+/* PRODUCT TEXT */
+.product h3 {
+  margin-top: 8px;
   font-size: 14px;
-  margin-top: 6px;
 }
 
-.card p {
-  font-size: 13px;
-  margin-top: 2px;
-}
-
-.card p b {
-  color: var(--primary);
-}
-
-/* =========================
-   BUTTONS
-   ========================= */
-.btn {
-  width: 100%;
-  padding: 10px;
-  margin-top: 8px;
-  border: none;
-  border-radius: 10px;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
-  color: white;
+.product p {
+  color: #ff6b00;
   font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.btn:hover {
-  opacity: 0.9;
-}
-
-.btn:active {
-  transform: scale(0.95);
 }
 
 /* =========================
-   INPUTS / SELECT
+   FOOTER
    ========================= */
-input,
-select {
-  width: 100%;
-  padding: 10px;
-  margin-top: 8px;
-  border-radius: 10px;
-  border: none;
-  background: var(--soft);
-  color: var(--text);
-}
-
-/* =========================
-   CART
-   ========================= */
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--card);
-  padding: 10px;
-  border-radius: 12px;
-  margin-bottom: 10px;
-}
-
-.cart-item div {
-  font-size: 13px;
-}
-
-.cart-item button {
-  margin-left: 5px;
-}
-
-/* =========================
-   TOTAL BOX
-   ========================= */
-.total-box {
-  background: var(--card);
-  padding: 15px;
-  border-radius: 12px;
-  margin: 10px;
-  border: 1px solid var(--border);
-}
-
-.total-box h3 {
-  margin-top: 5px;
-}
-
-/* =========================
-   COLLECTION SECTION
-   ========================= */
-#collectionItems .card {
-  animation: fadeIn 0.3s ease;
-}
-
-/* =========================
-   TRACKING
-   ========================= */
-#status {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-/* =========================
-   NAVBAR (APP STYLE)
-   ========================= */
-.bottom-nav {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  max-width: 420px;
-  display: flex;
-  justify-content: space-around;
-  background: rgba(15,15,15,0.95);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid var(--border);
-  padding: 10px 0;
-}
-
-.bottom-nav a {
-  text-decoration: none;
-  color: var(--subtext);
-  font-size: 12px;
+footer {
   text-align: center;
-}
-
-.bottom-nav a.active {
-  color: var(--primary);
-}
-
-/* =========================
-   CONTACT CARD
-   ========================= */
-.card p {
-  line-height: 1.4;
+  padding: 15px;
+  background: #111;
+  border-top: 1px solid #222;
+  margin-top: 20px;
+  color: #aaa;
 }
 
 /* =========================
-   ANIMATIONS
+   EXTRA EFFECTS
    ========================= */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
+/* GLOW EFFECT */
+.hero h2 {
+  text-shadow: 0 0 10px rgba(255, 107, 0, 0.6);
+}
+
+/* SMOOTH TRANSITIONS */
+* {
+  transition: all 0.2s ease;
 }
