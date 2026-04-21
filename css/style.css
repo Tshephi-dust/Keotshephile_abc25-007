@@ -600,3 +600,123 @@ select {
 .bottom-nav a.active {
   color: white;
 }
+/* ===== ROOT THEME ===== */
+:root {
+  --bg: #0a0a0a;
+  --card: #121212;
+  --text: #ffffff;
+  --gray: #b0b0b0;
+  --border: #222;
+}
+
+/* ===== GLOBAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ===== APP WRAPPER ===== */
+.app {
+  padding-bottom: 80px;
+}
+
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  background: #000;
+  border-bottom: 1px solid var(--border);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* theme button */
+.theme-toggle {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  padding: 20px;
+}
+
+/* ===== HEADINGS ===== */
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+/* ===== PARAGRAPH ===== */
+p {
+  color: var(--gray);
+  font-size: 14px;
+}
+
+/* ===== LIST ===== */
+ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 8px;
+  color: var(--gray);
+  font-size: 14px;
+}
+
+/* ===== HIGHLIGHT BOX STYLE (optional upgrade feel) ===== */
+.section {
+  background: var(--card);
+  margin: 15px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+/* ===== BOTTOM NAV ===== */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.bottom-nav a {
+  color: var(--gray);
+  text-decoration: none;
+  font-size: 12px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.bottom-nav a:hover,
+.bottom-nav a.active {
+  color: #fff;
+}
