@@ -1,31 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Checkout | Dust Threads</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout | Dust Threads</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+
 </head>
+
 <body>
-  <header><h1>Checkout</h1></header>
 
-  <main>
-    <form>
-      <fieldset>
-        <legend>Shipping Info</legend>
-        <input type="text" placeholder="Full Name">
-        <input type="text" placeholder="Address">
-        <input type="text" placeholder="City">
-      </fieldset>
+<header>
+  <h1>🖤 Checkout</h1>
+</header>
 
-      <fieldset>
-        <legend>Payment</legend>
-        <input type="text" placeholder="Card Number">
-        <input type="text" placeholder="Expiry Date">
-        <input type="text" placeholder="CVV">
-      </fieldset>
+<div class="checkout-container">
 
-      <button type="submit">Place Order</button>
-    </form>
-  </main>
+  <!-- ORDER SUMMARY -->
+  <div class="summary">
+    <h3>Order Summary</h3>
+    <p>Items: <span id="items">0</span></p>
+    <p>Total: P<span id="total">0</span></p>
+  </div>
+
+  <form onsubmit="placeOrder(event)">
+
+    <!-- SHIPPING -->
+    <fieldset>
+      <legend>Shipping Info</legend>
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="text" id="address" placeholder="Address" required>
+      <input type="text" id="city" placeholder="City" required>
+    </fieldset>
+
+    <!-- PAYMENT -->
+    <fieldset>
+      <legend>Payment Details</legend>
+      <input type="text" placeholder="Card Number (Demo Only)">
+      <input type="text" placeholder="Expiry Date">
+      <input type="text" placeholder="CVV">
+    </fieldset>
+
+    <button type="submit">Place Order</button>
+
+  </form>
+
+  <p id="success" style="color: green; display: none;">
+    ✅ Order placed successfully!
+  </p>
+
+</div>
+
+<script src="js/script.js"></script>
+
 </body>
 </html>
