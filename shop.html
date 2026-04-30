@@ -1,121 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Shop | Dust Threads</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop-Hotties.Brandz</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Shop</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="cart.html">Cart</a>
+<header>
+    <h1 class="logo">Hotties.Brandz</h1>
+
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="shop.html">Shop</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="cart.html">Cart 🛒</a>
     </nav>
-  </header>
+</header>
 
-  <main>
-    <h2>Browse Our T-shirt Collection</h2>
-    <ul class="filters">
-      <li><button>Graphic Tees</button></li>
-      <li><button>Plain Tees</button></li>
-      <li><button>Oversized</button></li>
-      <li><button>Custom</button></li>
-    </ul>
-    <div class="product-grid">
-        <div class="product">
-    <img src="images/G1.jpg" alt="Graphic Tee">
-    <h3>Graphic Tee</h3>
-    <p>P120</p>
-    <button>Add to Cart</button>
-  </div>
-       <div class="product">
-    <img src="images/G2.jpg" alt="Graphic Tee">
-    <h3>Graphic Tee</h3>
-    <p>P120</p>
-    <button>Add to Cart</button>
-  </div>
-       <div class="product">
-    <img src="images/G3.jpg" alt="Graphic Tee">
-    <h3>Graphic Tee</h3>
-    <p>P120</p>
-    <button>Add to Cart</button>
-  </div>
-       <div class="product">
-    <img src="images/G4.jpg" alt="Graphic Tee">
-    <h3>Graphic Tee</h3>
-    <p>P120</p>
-    <button>Add to Cart</button>
-  </div>
-       <div class="product">
-    <img src="images/G5.jpg" alt="Graphic Tee">
-    <h3>Graphic Tee</h3>
-    <p>P120</p>
-    <button>Add to Cart</button>
-  </div>
+<!-- CATEGORY BUTTONS -->
+<section class="content">
+    <h2>Shop Categories</h2>
 
-  <div class="product">
-    <img src="images/P1.jpg" alt="Plain Tee">
-    <h3>Plain White Tee</h3>
-    <p>P100</p>
-    <button>Add to Cart</button>
-  </div>
-       <div class="product">
-    <img src="images/P2.jpg" alt="Plain Tee">
-    <h3>Plain Tee</h3>
-    <p>P120</p>
-    <button>Add to Cart</button>
-  </div>
-       <div class="product">
-    <img src="images/P3.jpg" alt="Plain Tee">
-    <h3>Plain Tee</h3>
-    <p>P120</p>
-    <button>Add to Cart</button>
-  </div>
-       <div class="product">
-    <img src="images/P4.jpg" alt="Plain Tee">
-    <h3>Plain Tee</h3>
-    <p>P120</p>
-    <button>Add to Cart</button>
-  </div>
-       <div class="product">
-    <img src="images/P5.jpg" alt="Plain Tee">
-    <h3>Plain Tee</h3>
-    <p>P120</p>
-    <button>Add to Cart</button>
-  </div>
-
-  <div class="product">
-    <img src="images/O1.jpg" alt="Oversized Tee">
-    <h3>Oversized Tee</h3>
-    <p>P150</p>
-    <button>Add to Cart</button>
-  </div>
-      <div class="product">
-    <img src="images/O2.jpg" alt="Oversized Tee">
-    <h3>Oversized Tee</h3>
-    <p>P150</p>
-    <button>Add to Cart</button>
-  </div>
-      <div class="product">
-    <img src="images/O3.jpg" alt="Oversized Tee">
-    <h3>Oversized Tee</h3>
-    <p>P150</p>
-    <button>Add to Cart</button>
-  </div>
-      <div class="product">
-    <img src="images/O4.jpg" alt="Oversized Tee">
-    <h3>Oversized Tee</h3>
-    <p>P150</p>
-    <button>Add to Cart</button>
-  </div>
-      <div class="product">
-    <img src="images/O5.jpg" alt="Oversized Tee">
-    <h3>Oversized Tee</h3>
-    <p>P150</p>
-    <button>Add to Cart</button>
-  </div>
+    <div class="shop-nav">
+        <button id="women-shop-tab" onclick="showTab(this)">Women</button>
+        <button id="men-shop-tab" onclick="showTab(this)">Men</button>
     </div>
-  </main>
+</section>
+
+<!-- WOMEN SECTION -->
+<section id="women" class="content shop-tab">
+    <h2>Women Collection</h2>
+
+    <div class="products">
+
+        <div class="card">
+            <img src="maxidress.png">
+            <h3>Elegant Dress</h3>
+            <p>P200</p><br>
+           <button class="add-btn" onclick="addToCart('Elegant Dress', 200, this)">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="maxidress2.png">
+            <h3>Elegant Dress</h3>
+            <p>P250</p><br>
+           <button class="add-btn" onclick="addToCart('Elegant Dress', 250, this)">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="miniskirt.png">
+            <h3>Hot Skirt</h3>
+            <p>P250</p><br>
+           <button class="add-btn" onclick="addToCart('Hot Skirt', 250, this)">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="miniskirt2.png">
+            <h3>Hot Skirt</h3>
+            <p>P250</p><br>
+            <button class="add-btn" onclick="addToCart('Hot Skirt', 250, this)">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="womensneaker.png">
+            <h3>Sneaker</h3>
+            <p>P550</p><br>
+            <button class="add-btn" onclick="addToCart('Sneaker', 550, this)">Add to Cart</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- MEN SECTION -->
+<section id="men" class="content shop-tab invisible">
+    <h2>Men Collection</h2>
+
+    <div class="products">
+
+        <div class="card">
+            <img src="hoodie.jpeg.jfif">
+            <h3>Hoodie</h3>
+            <p>P350</p><br>
+            <button class="add-btn" onclick="addToCart('Hoodie', 350, this)">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="hoodie2.png">
+            <h3>Hoodie</h3>
+            <p>P350</p><br>
+            <button class="add-btn" onclick="addToCart('Hoodie', 350, this)">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="hoodie3.png">
+            <h3>Hoodie</h3>
+            <p>P350</p><br>
+          <button class="add-btn" onclick="addToCart('Hoodie', 350, this)">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="tshirts.png">
+            <h3>T-Shirt</h3>
+            <p>P180</p><br>
+           <button class="add-btn" onclick="addToCart('T-shirt', 180, this)">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="tshirts2.png">
+            <h3>T-Shirt</h3>
+            <p>P180</p><br>
+            <button class="add-btn" onclick="addToCart('T-shirt', 180, this)">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="sneakers.png">
+            <h3>Sneakers</h3>
+            <p>P600</p><br>
+             <button class="add-btn" onclick="addToCart('Sneaker', 600, this)">Add to Cart</button>
+        </div>
+
+</div>
+</section>
+
+  <section class="content">
+      
+     <a href="cart.html"><button>Go to Checkout</button>
+</a>
+</section> 
+   
+<footer>
+    <p>© 2026 Hotties.Brandz</p>
+    <p>Follow us on Instagram|Twitter|Facebook</p>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
