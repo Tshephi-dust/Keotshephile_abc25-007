@@ -272,3 +272,25 @@ function goToCheckout() {
 
 // LOAD ON PAGE OPEN
 window.onload = loadCart;
+function addToCart(name, price) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  cart.push({ name, price });
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  updateCartCount();
+}
+
+// UPDATE CART COUNT
+function updateCartCount() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let count = document.getElementById("cart-count");
+
+  if (count) {
+    count.innerText = cart.length;
+  }
+}
+
+// LOAD COUNT ON PAGE OPEN
+window.onload = updateCartCount;
