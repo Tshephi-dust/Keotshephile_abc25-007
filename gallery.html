@@ -1,53 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Dust Collection</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <header class="header">
-    <h1 class="logo">Hotties.Brandz</h1>
+  <h1 class="logo">Dust Collection</h1>
 
-    <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="shop.html">Shop</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
-        <a href="feedback.html">Feedback</a>
-        <a href="reviews.html">Reviews</a>
-        <a href="cart.html">Cart 🛒</a>
-    </nav>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="shop.html">Shop</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="cart.html">Cart 🛒</a>
+  </nav>
 </header>
 
 <section class="content">
-    <h2>Gallery</h2>
+  <h2>Our Collection</h2>
+  <p class="subtitle">Explore our latest streetwear drops</p>
 
-    <div class="products">
-        <img src="images/G1.jpg" alt="Graphic Tee">
-        <img src="images/G2.jpg" alt="Graphic Tee">
-        <img src="images/G3.jpg" alt="Graphic Tee">
-        <img src="images/G4.jpg" alt="Graphic Tee">
-        <img src="images/G5.jpg" alt="Graphic Tee">
-        <img src="images/O1.jpg" alt="Oversize Tee">
-        <img src="images/O2.jpg" alt="Oversive Tee">
-        <img src="images/O3.jpg" alt="Oversive Tee">
-        <img src="images/O4.jpg" alt="Oversize Tee">
-        <img src="images/O5.jpg" alt="Oversize Tee">
-        <img src="images/P1.jpg" alt="Plain Tee">
-        <img src="images/P2.jpg" alt="Plain Tee">
-        <img src="images/P3.jpg" alt="Plain Tee">
-        <img src="images/P4.jpg" alt="Plain Tee">
-        <img src="images/P5.jpg" alt="Plain Tee">
+  <div class="gallery">
 
-        
+    <!-- IMAGE CARD -->
+    <div class="img-box">
+      <img src="images/G1.jpg" alt="Graphic Tee">
     </div>
+
+    <div class="img-box">
+      <img src="images/G2.jpg" alt="Graphic Tee">
+    </div>
+
+    <div class="img-box">
+      <img src="images/G3.jpg" alt="Graphic Tee">
+    </div>
+
+    <div class="img-box">
+      <img src="images/G4.jpg" alt="Graphic Tee">
+    </div>
+
+    <div class="img-box">
+      <img src="images/G5.jpg" alt="Graphic Tee">
+    </div>
+
+    <div class="img-box">
+      <img src="images/O1.jpg" alt="Oversized Tee">
+    </div>
+
+    <div class="img-box">
+      <img src="images/O2.jpg" alt="Oversized Tee">
+    </div>
+
+    <div class="img-box">
+      <img src="images/O3.jpg" alt="Oversized Tee">
+    </div>
+
+    <div class="img-box">
+      <img src="images/O4.jpg" alt="Oversized Tee">
+    </div>
+
+    <div class="img-box">
+      <img src="images/O5.jpg" alt="Oversized Tee">
+    </div>
+
+    <div class="img-box">
+      <img src="images/P1.jpg" alt="Plain Tee">
+    </div>
+
+    <div class="img-box">
+      <img src="images/P2.jpg" alt="Plain Tee">
+    </div>
+
+    <div class="img-box">
+      <img src="images/P3.jpg" alt="Plain Tee">
+    </div>
+
+    <div class="img-box">
+      <img src="images/P4.jpg" alt="Plain Tee">
+    </div>
+
+    <div class="img-box">
+      <img src="images/P5.jpg" alt="Plain Tee">
+    </div>
+
+  </div>
 </section>
+
+<!-- LIGHTBOX (CLICK TO ZOOM) -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
+
 <script src="js/script.js"></script>
 
 </body>
