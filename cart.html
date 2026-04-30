@@ -1,25 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Cart | Dust Threads</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <title>Cart - Hotties.Brandz</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header><h1>Your Cart</h1></header>
 
-  <main>
-    <table>
-      <tr><th>Item</th><th>Qty</th><th>Price</th><th>Total</th></tr>
-      <!-- Example Row -->
-      <tr>
-        <td>Graphic Tee</td><td>2</td><td>$25</td><td>$50</td>
-      </tr>
-    </table>
-    <div class="cart-summary">
-      <p>Total: $50</p>
-      <a href="checkout.html" class="button">Proceed to Checkout</a>
+<header>
+    <h1 class="logo">Hotties.Brandz</h1>
+
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="shop.html">Shop</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="cart.html">Cart 🛒(<span id="cart-count">0</span>)</a>
+    </nav>
+</header>
+<section class="content">
+    <h2>Your Cart 🛒</h2>
+
+    <div class="cart-wrapper">
+        <div id="cart-list"></div>
+
+        <div class="cart-summary">
+            <h3>Total: P<span id="cart-total">0</span></h3>
+
+            <button onclick="clearCart()" class="clear-btn">Clear Cart</button>
+
+            <!--<div class="btn-center">
+                <button onclick="location.href='checkout.html'" class="submit-btn">
+                    Proceed to Checkout
+                </button>
+            </div>-->
+        </div>
     </div>
-  </main>
+</section>
+
+
+<section class="content">
+    <h2>Checkout Details</h2>
+
+    <form onsubmit="submitOrder(event)" class="feedback-form">
+        <input type="text" placeholder="Full Name" required>
+        <input type="text" placeholder="Phone Number" required>
+        <input type="text" placeholder="Delivery Address" required>
+        <input type="text" placeholder="Card Details" required>
+        
+
+ <div class="btn-center">
+    <button type="submit" class="submit-btn">Place Order</button>
+</div>
+        
+    </form>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
