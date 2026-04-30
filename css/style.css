@@ -1,185 +1,230 @@
-/* =========================
-   DUST THREADS - CLEAN DARK UI
-   ========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-/* ===== ROOT VARIABLES ===== */
-:root {
-  --bg: #0b0b0b;
-  --card: #1a1a1a;
-  --card-hover: #222;
-  --text: #ffffff;
-  --gray: #b0b0b0;
-  --border: #2a2a2a;
-  --accent: #ff6b00;
-}
-
-/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* ===== BODY ===== */
 body {
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.5;
+  background: radial-gradient(circle at top, #1a1a1a, #000000);
+  color: #fff;
+  min-height: 100vh;
 }
 
-/* ===== APP WRAPPER ===== */
-.app {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-  padding-bottom: 90px;
-}
-
-/* ===== HEADER ===== */
+/* =========================
+   HEADER (GLOSS BLACK BAR)
+========================= */
 header {
+  background: linear-gradient(145deg, #0a0a0a, #1c1c1c);
+  padding: 15px 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0;
-  font-size: 1.5rem;
-  font-weight: bold;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.8);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* Theme toggle */
-.theme-toggle {
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--text);
-  padding: 6px 10px;
-  border-radius: 6px;
-  cursor: pointer;
+.logo {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255,255,255,0.1);
 }
 
-/* ===== SECTION ===== */
-.section {
-  margin-top: 20px;
+.nav a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 14px;
+  transition: 0.3s;
 }
 
-.section h2 {
+.nav a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #fff;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
   text-align: center;
-  margin-bottom: 20px;
-  color: var(--accent);
+  padding: 80px 20px;
+  background: linear-gradient(145deg, #111, #000);
+  box-shadow: inset 0 0 100px rgba(255,255,255,0.05);
 }
 
-/* ===== GRID ===== */
-.items {
+.hero h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: #aaa;
+}
+
+/* =========================
+   PRODUCT GRID
+========================= */
+.products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
+  padding: 30px;
 }
 
-/* ===== CARD ===== */
 .card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 15px;
+  background: linear-gradient(145deg, #111, #1a1a1a);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 15px;
+  overflow: hidden;
   text-align: center;
+  padding: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
   transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  background: var(--card-hover);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(255,255,255,0.05);
 }
 
-/* IMAGE */
 .card img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  transition: 0.3s;
 }
 
-/* TEXT */
+.card img:hover {
+  transform: scale(1.05);
+}
+
 .card h3 {
-  margin: 10px 0;
-  font-size: 1.1rem;
+  font-size: 16px;
+  margin: 5px 0;
 }
 
 .card p {
-  color: var(--gray);
-  font-size: 14px;
+  color: #aaa;
 }
 
-/* PRICE */
-.card s {
-  color: #777;
-}
-
-.card b {
-  color: var(--accent);
-  font-size: 16px;
-}
-
-/* ===== SELECT ===== */
-select {
-  margin-top: 8px;
-  padding: 6px;
-  width: 80%;
-  background: #000;
-  color: white;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-}
-
-/* ===== BUTTON ===== */
-.btn {
-  margin-top: 10px;
-  padding: 8px 14px;
-  background: var(--accent);
+/* =========================
+   BUTTONS (GLOSS STYLE)
+========================= */
+button {
+  background: linear-gradient(145deg, #ffffff, #bdbdbd);
+  color: black;
   border: none;
-  color: #fff;
-  border-radius: 6px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 600;
   transition: 0.3s;
+  margin-top: 10px;
+  box-shadow: 0 5px 15px rgba(255,255,255,0.1);
 }
 
-.btn:hover {
-  background: #e65c00;
+button:hover {
+  background: #fff;
+  transform: scale(1.03);
 }
 
-/* ===== BOTTOM NAV ===== */
-.bottom-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+/* =========================
+   CART
+========================= */
+.cart-item {
   background: #111;
-  border-top: 1px solid var(--border);
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.05);
   display: flex;
-  justify-content: space-around;
-  padding: 10px 0;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.bottom-nav a {
-  color: var(--gray);
-  font-size: 1.4rem;
-  text-decoration: none;
+.cart-summary {
+  padding: 20px;
+  text-align: center;
+}
+
+/* =========================
+   FORMS (CONTACT / FEEDBACK)
+========================= */
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background: #111;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border: 1px solid #fff;
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+/* =========================
+   CONTENT BOX
+========================= */
+.content {
+  padding: 40px;
+  text-align: center;
+}
+
+/* =========================
+   GALLERY
+========================= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
   transition: 0.3s;
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
-.bottom-nav a:hover,
-.bottom-nav a.active {
-  color: var(--accent);
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 600px) {
-  header {
-    font-size: 1.2rem;
-  }
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 40px;
+}
 
-  .card img {
-    height: 160px;
-  }
+/* =========================
+   SMALL EFFECTS
+========================= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
 }
