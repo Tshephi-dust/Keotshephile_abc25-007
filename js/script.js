@@ -197,3 +197,31 @@ function sendMessage(event) {
 
   document.querySelector(".contact-form").reset();
 }
+// Load cart summary (if you stored cart before)
+window.onload = function () {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  let total = 0;
+  cart.forEach(item => total += item.price);
+
+  document.getElementById("items").innerText = cart.length;
+  document.getElementById("total").innerText = total;
+};
+
+function placeOrder(event) {
+  event.preventDefault();
+
+  let name = document.getElementById("name").value;
+  let address = document.getElementById("address").value;
+  let city = document.getElementById("city").value;
+
+  if (!name || !address || !city) {
+    alert("Please fill in all shipping details");
+    return;
+  }
+
+  document.getElementById("success").style.display = "block";
+
+  // Clear cart
+  localStorage.removeItem("cart");
+}
