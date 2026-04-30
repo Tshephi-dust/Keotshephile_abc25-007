@@ -225,3 +225,50 @@ function placeOrder(event) {
   // Clear cart
   localStorage.removeItem("cart");
 }
+// LOAD CART
+function loadCart() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  let list = document.getElementById("cart-list");
+  let total = 0;
+
+  list.innerHTML = "";
+
+  cart.forEach((item, index) => {
+    total += item.price;
+
+    list.innerHTML += `
+      <div class="cart-item">
+        <p>${item.name} - P${item.price}</p>
+        <button onclick="removeItem(${index})">Remove</button>
+      </div>
+    `;
+  });
+
+  document.getElementById("cart-total").innerText = total;
+  document.getElementById("cart-count").innerText = cart.length;
+}
+
+// REMOVE ITEM
+function removeItem(index) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  cart.splice(index, 1);
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  loadCart();
+}
+
+// CLEAR CART
+function clearCart() {
+  localStorage.removeItem("cart");
+  loadCart();
+}
+
+// GO TO CHECKOUT PAGE
+function goToCheckout() {
+  window.location.href = "checkout.html";
+}
+
+// LOAD ON PAGE OPEN
+window.onload = loadCart;
