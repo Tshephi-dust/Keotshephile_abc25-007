@@ -157,3 +157,27 @@ document.addEventListener("DOMContentLoaded", () => {
     loadCartPage();
     updateCartCount();
 });
+function submitFeedback(event) {
+  event.preventDefault(); // stop page reload
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  if (!name || !email || !message) {
+    alert("Please fill in all fields");
+    return;
+  }
+
+  // Save to local storage (temporary)
+  let feedbacks = JSON.parse(localStorage.getItem("feedbacks")) || [];
+
+  feedbacks.push({ name, email, message });
+
+  localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
+
+  document.getElementById("successMessage").style.display = "block";
+
+  // Clear form
+  document.querySelector(".feedback-form").reset();
+}
